@@ -10,11 +10,13 @@
         { name: "Laura", lastName: "Trajkova", age: 23 },
       ];
       let mapUsers = users.map((user) => {
-        let fullName = user.name + "" + user.lastName;
+        let fullName = user.name + "" + user.lastName + " age: " + user.age;
         // in map method we must always have return
         return fullName;
       });
       console.log(mapUsers);
+      // map always returns new array
+      // it does not change the size of the original array
     </script>
   </body>
 </html>
