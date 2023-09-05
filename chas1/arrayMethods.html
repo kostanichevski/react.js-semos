@@ -10,13 +10,85 @@
         { name: "Laura", lastName: "Trajkova", age: 23 },
       ];
       let mapUsers = users.map((user) => {
-        let fullName = user.name + "" + user.lastName + " age: " + user.age;
+        let fullName = user.name + " " + user.lastName + " age: " + user.age;
         // in map method we must always have return
         return fullName;
       });
       console.log(mapUsers);
       // map always returns new array
       // it does not change the size of the original array
+      // kreirajte niza od avtomobili kaj sto vnatre kje ima godina, mark i model i potoa so map da go ispecatime model i koja godina e
+      let cars = [
+        { brand: "Audi", model: "S5", year: "2023" },
+        { brand: "Lamborghini", model: "Urus", year: "2022" },
+        { brand: "Bentley", model: "Continental GT", year: "2021" },
+      ];
+      let mapCars = cars.map((car) => {
+        let carModel = car.model + " " + car.year;
+        return carModel;
+      });
+      console.log(mapCars);
+
+      // filter is used to provide a new array depending on certain criteria
+      // returns all the objects that match the criteria
+      let result = users.filter((user) => user.age < 30);
+      let result1 = users.filter((user) => user.age > 30);
+      console.log(result1);
+
+      //find is used to find an instance inside the array
+      // returns the first result that matches the filter criteria
+      let findResult = users.find((person) => person.name === "Laura");
+      console.log(findResult);
+
+      // da napravime filter na site avtomobili koi se postari od 2010 godina
+      // da probame dali postoi avtomobil so marka BMW
+
+      let carsYearFilter = cars.filter((car) => car.year < 2010);
+      console.log(carsYearFilter);
+
+      let findBMW = cars.find((car) => car.brand === "BMW");
+      console.log(findBMW);
+
+      // let fruits = ["mango", "orange", "apple", "lemon", "kiwi"];
+      // let fruit1 = fruits[0];
+      // let fruit3 = fruits[2];
+      // console.log(fruit1, fruit3);
+
+      // vaka se pravi destrukturiranje
+      // let [fruitEden, , fruitDva] = fruits;
+      // console.log(fruitEden, fruitDva);
+
+      const person = {
+        firstName: "Kosta",
+        lastName: "Nichevski",
+        age: 20,
+        hobbies: {
+          hobby1: "basketball",
+          hobby2: "coding",
+        },
+      };
+      //sto bi trebalo da pravime
+      console.log(person.firstName, person.age, person.hobbies.hobby1);
+      if (person.age > 30) {
+        console.log("older than 30");
+      } else {
+        console.log("younger than 30");
+      }
+
+      //kkaos e pravi so destrukturiranje
+      const {
+        firstName,
+        age,
+        hobbies: { hobby1 },
+      } = person;
+      if (firstName === "Kosta") {
+        console.log("hello");
+      }
+
+      // rest operator
+      let fruits2 = ["mango", "apple", "orange", "pineapple", "banana"];
+      let [firstFruit, secondFruit, ...rest] = fruits2;
+      console.log(firstFruit, secondFruit, rest);
     </script>
   </body>
 </html>
