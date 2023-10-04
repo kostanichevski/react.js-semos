@@ -9,3 +9,5 @@ Da napravime i movies komponenta koja kje prima lista od filmovi i preku custom 
 imajte ja listata i vo movies i vo movie komponenta
 
 Bonus: listata da bide samo vo app.js a preku props prakjajte ja vo komponentite sto vi trebaat
+
+
