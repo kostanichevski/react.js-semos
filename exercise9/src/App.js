@@ -3,6 +3,8 @@ import "./App.css";
 import { Navigation } from "./components/Navigation";
 import { Routes, Route } from "react-router-dom";
 import { Posts } from "./components/Posts";
+import { Comments } from "./components/Comments";
+import { Comment } from "./components/Comment";
 
 function App() {
   return (
@@ -10,8 +12,9 @@ function App() {
       <h1>I am learning API's</h1>
       <Navigation />
       <Routes>
-        <Route path="/comments" element={<h1>Comments</h1>} />
+        <Route path="/comments" element={<Comments />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/single-comment/:id" element={<Comment />} />
       </Routes>
     </div>
   );
