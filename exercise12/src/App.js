@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Navigation } from "./components/Navigation";
+import { Routes, Route } from "react-router-dom";
+import { Cake } from "./components/Cake";
+import { Comments } from "./components/Comments";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Redux part 2</h1>
+      <Navigation />
+      <Routes>
+        <Route path="/cake" element={<Cake />} />
+        <Route path="/comments" element={<Comments />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+//cd exercise12
+// npm i react-router-dom
+// npm i react-redux
+// npm i redux
